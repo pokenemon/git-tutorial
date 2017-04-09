@@ -5,6 +5,10 @@
 #services:
 #  - redis
 
+
+language: php
+php:
+  - 5.3
 #install:
 #  - bundle install --path=vendor/bundle
 #cache: bundler
