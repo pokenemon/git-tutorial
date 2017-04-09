@@ -48,8 +48,8 @@ deploy:
  provider: script
  skip_cleanup: true
  script: deploy/deploy.sh
- on:
-   branch: develop
+# on:
+#   branch: develop
 
 after_deploy:
 - echo 'end deploy'
