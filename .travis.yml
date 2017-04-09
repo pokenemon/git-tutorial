@@ -35,19 +35,19 @@ after_success:
 - tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
 
 deploy:
-- provider: s3
-  bucket: plussign
-  local-dir: /var/tmp/release
-  upload-dir: latest
-  # skip_cleanup: true
-  region: $AWS_DEFAULT_REGION
-  access_key_id: $DEV_AWS_ACCESS_KEY_ID
-  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
-  on: &1
-    branch: develop
-#- provider: script
-#  script: deploy/deploy.sh
-#  on: *1
+#- provider: s3
+#  bucket: plussign
+#  local-dir: /var/tmp/release
+#  upload-dir: latest
+#  # skip_cleanup: true
+#  region: $AWS_DEFAULT_REGION
+#  access_key_id: $DEV_AWS_ACCESS_KEY_ID
+#  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
+#  on: &1
+#    branch: develop
+- provider: script
+  script: deploy/deploy.sh
+  on: *1
 
 after_deploy:
 - echo 'end deploy'
