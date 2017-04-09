@@ -1,14 +1,14 @@
-#language: ruby
-#rvm:
-#  - 2.3.3
-#sudo: required
+language: ruby
+rvm:
+  - 2.3.3
+sudo: required
 #services:
 #  - redis
 
 
-language: php
-php:
-  - 5.3
+#language: php
+#php:
+#  - 5.3
 script:
 #  - phpunit -c app.php
   - echo "test"
@@ -20,8 +20,8 @@ script:
 #  - bundle exec rubocop
 #  - RACK_ENV=spec bundle exec rake spec
 
-#before_install:
-# - gem update --system
+before_install:
+ - gem update --system
 
 branches:
   only:
