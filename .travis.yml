@@ -5,15 +5,15 @@ sudo: required
 services:
   - redis
 
-install:
-  - bundle install --path=vendor/bundle
-cache: bundler
-script:
-  - bundle exec rubocop
-  - RACK_ENV=spec bundle exec rake spec
+#install:
+#  - bundle install --path=vendor/bundle
+#cache: bundler
+#script:
+#  - bundle exec rubocop
+#  - RACK_ENV=spec bundle exec rake spec
 
-before_install:
- - gem update --system
+#before_install:
+# - gem update --system
 
 branches:
   only:
@@ -37,9 +37,9 @@ deploy:
   secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
   on: &1
     branch: topic-add-deployflow
-- provider: script
-  script: deploy/deploy.sh
-  on: *1
+#- provider: script
+#  script: deploy/deploy.sh
+#  on: *1
 
 after_deploy:
 - echo 'end deploy'
