@@ -44,7 +44,7 @@ deploy:
   access_key_id: $DEV_AWS_ACCESS_KEY_ID
   secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
   on: &1
-    branch: topic-add-deployflow
+    branch: develop
 #- provider: script
 #  script: deploy/deploy.sh
 #  on: *1
