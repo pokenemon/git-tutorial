@@ -3,12 +3,12 @@
   "Parameters" : {
     "InstanceSubnetId" : {
       "Type" : "String",
-      "Default" : "subnet-0b57a652",
+      "Default" : "subnet-d1e236a6",
       "Description" : "SubnetId"
     },
     "SecurityGroupDefault" : {
       "Type" : "String",
-      "Default" : "sg-b2da64d7",
+      "Default" : "sg-a11641c6",
       "Description" : "SecurityGroupDefault"
     }
   },
