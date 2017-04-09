@@ -2,8 +2,8 @@ language: ruby
 rvm:
   - 2.3.3
 sudo: required
-services:
-  - redis
+#services:
+#  - redis
 
 #install:
 #  - bundle install --path=vendor/bundle
