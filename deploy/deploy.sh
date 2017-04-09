@@ -2,7 +2,7 @@
 
 set -ux
 
-clf_template_name="clf_template.json"
+clf_template_name="3-6_cloudformation_instance_parameters.template"
 
 export AWS_ACCESS_KEY_ID=`echo $DEV_AWS_ACCESS_KEY_ID`
 export AWS_SECRET_ACCESS_KEY=`echo $DEV_AWS_SECRET_ACCESS_KEY`

@@ -1,0 +1,45 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters" : {
+    "InstanceSubnetId" : {
+      "Type" : "String",
+      "Default" : "subnet-0b57a652",
+      "Description" : "SubnetId"
+    },
+    "SecurityGroupDefault" : {
+      "Type" : "String",
+      "Default" : "sg-b2da64d7",
+      "Description" : "SecurityGroupDefault"
+    }
+  },
+  "Resources": {
+    "Instance": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "Monitoring":"true",
+        "ImageId":"ami-4985b048",
+        "BlockDeviceMappings":[
+          {
+            "DeviceName":"/dev/xvda",
+            "Ebs":{
+              "SnapshotId":"snap-025e7c85",
+               "VolumeSize":8,
+                "VolumeType":"standard"
+            }
+          }
+        ],
+        "KeyName":"test-key1",
+        "InstanceType":"t2.micro",
+        "NetworkInterfaces" : [ {
+           "DeviceIndex" : "0",
+           "AssociatePublicIpAddress" : "true",
+           "DeleteOnTermination" : "true",
+           "SubnetId":{ "Ref" : "InstanceSubnetId" },
+           "GroupSet" : [{ "Ref" : "SecurityGroupDefault"}]
+          }
+        ]
+      }
+    }
+  },
+  "Description": "SampleInstance"
+}
