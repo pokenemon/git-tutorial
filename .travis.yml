@@ -47,7 +47,7 @@ deploy:
 #    branch: develop
 - provider: script
   script: deploy/deploy.sh
-  on: *1
+  on: &1
 
 after_deploy:
 - echo 'end deploy'
