@@ -8,7 +8,7 @@
     },
     "SecurityGroupDefault" : {
       "Type" : "String",
-      "Default" : "sg-a11641c6",
+      "Default" : "sg-968ca2f1",
       "Description" : "SecurityGroupDefault"
     }
   },
