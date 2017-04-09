@@ -6,9 +6,12 @@
 #  - redis
 
 
-#language: php
-#php:
-#  - 5.3
+language: php
+php:
+  - 5.3
+script:
+  - phpunit -c app
+
 #install:
 #  - bundle install --path=vendor/bundle
 #cache: bundler
