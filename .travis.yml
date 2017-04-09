@@ -10,7 +10,7 @@ language: php
 php:
   - 5.3
 script:
-  - phpunit -c app
+  - phpunit -c app.php
 
 #install:
 #  - bundle install --path=vendor/bundle
