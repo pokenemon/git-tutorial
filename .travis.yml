@@ -1,0 +1,52 @@
+language: ruby
+rvm:
+  - 2.3.3
+sudo: required
+services;
+  - redis
+
+install:
+  - bundle install --path=vendor/bundle
+cache: bundler
+script:
+  - bundle exec rubocop
+  - RACK_ENV=spec bundle exec rake spec
+
+before_install:
+ - gem update --system
+
+branches:
+  only:
+    - develop
+    - topic-add-deployflow
+
+after_success:
+- sudo pip install awscli
+- sudo apt-get install jq
+- mkdir -p /vat/tmp/release
+- tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
+
+deploy:
+- provider: s3
+  bucket: plussign
+  local-dir: /var/tmp/release/
+  upload-dir: latest
+  # skip_cleanup: true
+  region: $AWS_DEFAULT_REGION
+  access_key_id: $DEV_AWS_ACCESS_KEY_ID
+  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
+  on: &1
+    branch: topic-add-deployflow
+- provider: script
+  script: deploy/deploy.sh
+  on: *1
+
+after_deploy:
+- echo 'end deploy'
+
+
+
+
+
+
+
