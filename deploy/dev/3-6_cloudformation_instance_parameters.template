@@ -52,7 +52,7 @@
           }
         },
         "Tags": [ {
-            "Key": "deployed"
+            "Key": "deployed",
             "Value": "development-false"
         } ]
       }
