@@ -22,3 +22,13 @@ if [ $? != 0 ]; then
 fi
 
 echo "wait until create-stack"
+
+
+echo "wait until deploy"
+codedeploy_deployment_file="codedeploy_deployment.json"
+
+deployment_id=`aws deploy create-deployment --cli-input-json file://file://deploy/dev/"$codedeploy_deployment_file" | jq -r '.deploymentId'`
+echo $deployment_id
+aws deploy wait deployment-successful --deployment-id $deployment_id
+
+

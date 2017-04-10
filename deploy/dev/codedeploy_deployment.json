@@ -1,0 +1,32 @@
+{
+ "applicationName": "codedeploy_test",
+ "deploymentGroupName": "dev-deployment-group",
+   "revision": {
+   "revisionType": "S3",
+   "s3Location": {
+     "key": "code-test.zip",
+     "bucket": "plussign",
+     "bundleType": "zip"
+   }
+   },
+ "deploymentConfigName": "CodeDeployDefault.OneAtTime",
+ "ignoreApplicationStopFailures": false,
+ "autoRollbackConfiguration": {
+   "events": [
+     "DEPLOYMENT_FAILURE"
+   ],
+   "enabled": true
+ },
+ "updateOutdatedInstancesOnly": false,
+ "targetInstances": {
+   "tagFilters": [
+     {
+       "Key": "deployed",
+       "Value": "development-false",
+       "Type": "KEY_AND_VALUE"
+     }
+   ]
+ }
+}
+ 
+ 
