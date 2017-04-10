@@ -38,23 +38,6 @@
            "GroupSet" : [{ "Ref" : "SecurityGroupDefault"}]
           }
         ]
-        "UserData": {
-          "Fn::Base64": {
-            "Fn::Join": ["",
-              [
-                "#!/bin/sh\n",
-                "curl \"https://bootstrap.pypa.io/get-pip.py\" -o \"get-pip.py\"\n",
-                "sudo python get-pip.py\n",
-                "sudo pip install awscli\n",
-                "sudo yum install -y jq\n"
-              ]
-            ]
-          }
-        },
-        "Tags": [ {
-            "Key": "deployed"
-            "Value": "development-false"
-        } ]
       }
     }
   },
