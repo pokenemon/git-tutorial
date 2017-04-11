@@ -17,7 +17,7 @@
       "Type": "AWS::EC2::Instance",
       "Properties": {
         "Monitoring":"true",
-        "ImageId":"ami-4985b048",
+        "ImageId":"ami-c99dbeae",
         "BlockDeviceMappings":[
           {
             "DeviceName":"/dev/xvda",
