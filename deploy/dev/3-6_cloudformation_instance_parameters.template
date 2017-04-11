@@ -17,16 +17,17 @@
       "Type": "AWS::EC2::Instance",
       "Properties": {
         "Monitoring":"true",
-        "ImageId":"ami-c99dbeae",
-        "BlockDeviceMappings":[
-          {
-            "DeviceName":"/dev/xvda",
-            "Ebs":{
-              "SnapshotId":"snap-025e7c85",
-               "VolumeSize":8,
-                "VolumeType":"standard"
-            }
-          }
+        "ImageId":"ami-c99dbeae"
+        #"ImageId":"ami-c99dbeae",
+        #"BlockDeviceMappings":[
+        #  {
+        #    "DeviceName":"/dev/xvda",
+        #    "Ebs":{
+        #      "SnapshotId":"snap-025e7c85",
+        #       "VolumeSize":8,
+        #        "VolumeType":"standard"
+        #    }
+        #  }
         ],
         "KeyName":"test-key1",
         "InstanceType":"t2.micro",
