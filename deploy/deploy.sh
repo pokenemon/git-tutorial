@@ -22,7 +22,7 @@ if [ $? != 0 ]; then
 fi
 
 echo "wait until create-stack"
-
+echo "wait until create-stack"
 
 echo "wait until deploy"
 codedeploy_deployment_file="codedeploy_deployment.json"
