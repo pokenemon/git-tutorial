@@ -28,7 +28,7 @@
         #        "VolumeType":"standard"
         #    }
         #  }
-        ],
+        #],
         "KeyName":"test-key1",
         "InstanceType":"t2.micro",
         "NetworkInterfaces" : [ {
