@@ -24,7 +24,7 @@ fi
 echo "wait until create-stack"
 echo "wait until create-stack"
 
-sleep 600;
+sleep 300;
 
 
 echo "wait until deploy"
