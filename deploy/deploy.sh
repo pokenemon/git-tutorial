@@ -24,6 +24,9 @@ fi
 echo "wait until create-stack"
 echo "wait until create-stack"
 
+sleep 600;
+
+
 echo "wait until deploy"
 codedeploy_deployment_file="codedeploy_deployment.json"
 
