@@ -29,10 +29,10 @@ branches:
     - topic-add-deployflow
 
 after_success:
-- sudo pip install awscli
-- sudo apt-get install jq
-- mkdir -p /vat/tmp/release
-- tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
+#- sudo pip install awscli
+#- sudo apt-get install jq
+#- mkdir -p /vat/tmp/release
+#- tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
 
 deploy:
 #- provider: s3
