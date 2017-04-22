@@ -11,7 +11,7 @@ sudo: required
 #  - 5.3
 script:
 #  - phpunit -c app.php
-#  - echo "test"
+  - echo "test"
   
 #install:
 #  - bundle install --path=vendor/bundle
@@ -35,21 +35,21 @@ after_success:
 - tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
 
 deploy:
-- provider: s3
-  bucket: plussign
-  local-dir: /var/tmp/release
-  upload-dir: latest
-  # skip_cleanup: true
-  region: $AWS_DEFAULT_REGION
-  access_key_id: $DEV_AWS_ACCESS_KEY_ID
-  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
-  on: &1
-    branch: /dev.*
-- provider: script
-  skip_cleanup: true
-  script: sh deploy/deploy.sh
-  on:
-    branch: /^dev.*&/
+#- provider: s3
+#  bucket: plussign
+#  local-dir: /var/tmp/release
+#  upload-dir: latest
+#  # skip_cleanup: true
+#  region: $AWS_DEFAULT_REGION
+#  access_key_id: $DEV_AWS_ACCESS_KEY_ID
+#  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
+#  on: &1
+#    branch: develop
+ provider: script
+ skip_cleanup: true
+ script: sh deploy/deploy.sh
+ on:
+   branch: /^dev.*$/
 
 after_deploy:
 - echo 'end deploy'
