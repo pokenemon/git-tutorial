@@ -25,7 +25,7 @@ before_install:
 
 branches:
   only:
-    - develop
+    - /^dev.*$/
     - topic-add-deployflow
 
 after_success:
@@ -35,21 +35,21 @@ after_success:
 - tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
 
 deploy:
-#- provider: s3
-#  bucket: plussign
-#  local-dir: /var/tmp/release
-#  upload-dir: latest
-#  # skip_cleanup: true
-#  region: $AWS_DEFAULT_REGION
-#  access_key_id: $DEV_AWS_ACCESS_KEY_ID
-#  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
-#  on: &1
-#    branch: develop
- provider: script
+- provider: s3
+  bucket: plussign
+  local-dir: /var/tmp/release
+  upload-dir: latest
+  # skip_cleanup: true
+  region: $AWS_DEFAULT_REGION
+  access_key_id: $DEV_AWS_ACCESS_KEY_ID
+  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
+  on: &1
+    branch: /^dev.*$/
+-provider: script
  skip_cleanup: true
  script: sh deploy/deploy.sh
  on:
-   branch: develop
+   branch: /^dev.*$/
 
 after_deploy:
 - echo 'end deploy'
