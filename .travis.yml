@@ -45,11 +45,11 @@ deploy:
   secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
   on: &1
     branch: /^dev.*$/
--provider: script
- skip_cleanup: true
- script: sh deploy/deploy.sh
- on:
-   branch: /^dev.*$/
+- provider: script
+  skip_cleanup: true
+  script: sh deploy/deploy.sh
+  on:
+    branch: /^dev.*$/
 
 after_deploy:
 - echo 'end deploy'
