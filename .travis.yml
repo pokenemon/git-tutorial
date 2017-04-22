@@ -49,7 +49,7 @@ deploy:
  skip_cleanup: true
  script: sh deploy/deploy.sh
  on:
-   branch: /^dev.*$/
+   branch: /^dev.*$
 
 after_deploy:
 - echo 'end deploy'
