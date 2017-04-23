@@ -34,7 +34,7 @@ after_success:
 - mkdir -p /vat/tmp/release
 - tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
 - if[ "$TRAVIS_BRANCH" =~ /^dev.*$ ]; then
-   dev_deploy_branch=$TRAVIS_BRANCH
+   DEV_DEPLOY_BRANCH=$TRAVIS_BRANCH
   fi
 
 
