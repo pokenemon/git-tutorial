@@ -15,7 +15,7 @@ branches:
     - topic-add-deployflow
 
 after_success:
-- deploy/after_success.sh
+- sh deploy/after_success.sh
 
 deploy:
 - provider: script
