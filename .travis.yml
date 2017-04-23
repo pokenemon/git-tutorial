@@ -11,11 +11,15 @@ before_install:
 
 branches:
   only:
-    - /^dev.*$/
+    - /^dev-.*$/
     - topic-add-deployflow
 
 after_success:
-- source deploy/after_success.sh
+- sudo pip install awscli
+- sudo apt-get install jq
+- mkdir -p /var/tmp/release
+- tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./;
+- source deploy/set_branch.sh
 
 deploy:
 - provider: script
