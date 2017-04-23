@@ -2,24 +2,10 @@ language: ruby
 rvm:
   - 2.3.3
 sudo: required
-#services:
-#  - redis
 
-
-#language: php
-#php:
-#  - 5.3
 script:
-#  - phpunit -c app.php
   - echo $TRAVIS_BRANCH
   
-#install:
-#  - bundle install --path=vendor/bundle
-#cache: bundler
-#script:
-#  - bundle exec rubocop
-#  - RACK_ENV=spec bundle exec rake spec
-
 before_install:
  - gem update --system
 
@@ -37,20 +23,10 @@ after_success:
 - echo $DEV_DEPLOY_BRANCH
 
 deploy:
-#- provider: s3
-#  bucket: plussign
-#  local-dir: /var/tmp/release
-#  upload-dir: latest
-#  # skip_cleanup: true
-#  region: $AWS_DEFAULT_REGION
-#  access_key_id: $DEV_AWS_ACCESS_KEY_ID
-#  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
-#  on: &1
-#    branch: develop
- provider: script
- skip_cleanup: true
- script: sh deploy/deploy.sh
- on:
+- provider: script
+  skip_cleanup: true
+  script: sh deploy/deploy.sh
+  on:
 #   branch: $TRAVIS_BRANCH
    branch: $DEV_DEPLOY_BRANCH
 #   condition: "$TRAVIS_BRANCH =~ /^dev.*$"
