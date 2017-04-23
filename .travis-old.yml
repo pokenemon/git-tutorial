@@ -1,0 +1,67 @@
+language: ruby
+rvm:
+  - 2.3.3
+sudo: required
+#services:
+#  - redis
+
+
+#language: php
+#php:
+#  - 5.3
+script:
+#  - phpunit -c app.php
+  - echo $TRAVIS_BRANCH
+  
+#install:
+#  - bundle install --path=vendor/bundle
+#cache: bundler
+#script:
+#  - bundle exec rubocop
+#  - RACK_ENV=spec bundle exec rake spec
+
+before_install:
+ - gem update --system
+
+branches:
+  only:
+    - /^dev.*$/
+    - topic-add-deployflow
+
+after_success:
+- sudo pip install awscli
+- sudo apt-get install jq
+- mkdir -p /vat/tmp/release
+- tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
+- if [ "$TRAVIS_BRANCH" =~ /^dev.*$/ ]; then DEV_DEPLOY_BRANCH="$TRAVIS_BRANCH" fi
+- echo $DEV_DEPLOY_BRANCH
+
+deploy:
+#- provider: s3
+#  bucket: plussign
+#  local-dir: /var/tmp/release
+#  upload-dir: latest
+#  # skip_cleanup: true
+#  region: $AWS_DEFAULT_REGION
+#  access_key_id: $DEV_AWS_ACCESS_KEY_ID
+#  secret_access_key: #DEV_AWS_SECRET_ACCESS_KEY
+#  on: &1
+#    branch: develop
+ provider: script
+ skip_cleanup: true
+ script: sh deploy/deploy.sh
+ on:
+#   branch: $TRAVIS_BRANCH
+   branch: $DEV_DEPLOY_BRANCH
+#   condition: "$TRAVIS_BRANCH =~ /^dev.*$"
+#   condition: $TRAVIS_BRANCH = develop
+
+after_deploy:
+- echo 'end deploy'
+
+
+
+
+
+
+
