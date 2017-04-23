@@ -50,7 +50,7 @@ deploy:
  script: sh deploy/deploy.sh
  on:
 #   branch: /^dev.*$
-   condition: $TRAVIS_BRANCH =~ /^dev.*$
+   condition: "$TRAVIS_BRANCH =~ /^dev.*$"
 
 after_deploy:
 - echo 'end deploy'
