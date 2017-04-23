@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 sudo pip install awscli;
 sudo apt-get install jq;
 mkdir -p /vat/tmp/release;
