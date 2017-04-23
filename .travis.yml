@@ -34,7 +34,7 @@ after_success:
 - mkdir -p /vat/tmp/release
 - tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./
 - if[ "$TRAVIS_BRANCH" =~ /^dev.*$ ]; then
-   deploy_branch=$TRAVIS_BRANCH
+   dev_deploy_branch=$TRAVIS_BRANCH
   fi
 
 
@@ -53,7 +53,8 @@ deploy:
  skip_cleanup: true
  script: sh deploy/deploy.sh
  on:
-   branch: $TRAVIS_BRANCH
+#   branch: $TRAVIS_BRANCH
+   branch: $DEV_DEPLOY_BRANCH
 #   condition: "$TRAVIS_BRANCH =~ /^dev.*$"
 #   condition: $TRAVIS_BRANCH = develop
 
