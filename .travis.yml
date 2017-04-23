@@ -49,9 +49,9 @@ deploy:
  skip_cleanup: true
  script: sh deploy/deploy.sh
  on:
-#   branch: /^dev.*$
+   branch: $TRAVIS_BRANCH
 #   condition: "$TRAVIS_BRANCH =~ /^dev.*$"
-   condition: $TRAVIS_BRANCH = develop
+#   condition: $TRAVIS_BRANCH = develop
 
 after_deploy:
 - echo 'end deploy'
