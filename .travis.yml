@@ -1,7 +1,7 @@
 language: ruby
 rvm:
   - 2.3.3
-sudo: required
+#sudo: required
 
 script:
   - echo $TRAVIS_BRANCH
