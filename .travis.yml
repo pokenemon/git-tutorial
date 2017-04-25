@@ -25,12 +25,24 @@ after_success:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: sh deploy/deploy.sh
-  on:
+  script: sh deploy/test1.sh
+  on: &1
 #   branch: $TRAVIS_BRANCH
    branch: $DEV_DEPLOY_BRANCH
-#   condition: "$TRAVIS_BRANCH =~ /^dev.*$"
-#   condition: $TRAVIS_BRANCH = develop
+- provider: script
+  skip_cleanup: true
+  script: sh deploy/test2.sh
+  on: *1
+- provider: script
+  skip_cleanup: true
+  script: sh deploy/test3.sh
+  on: &1
+   branch: $TEST_DEPLOY_BRANCH
+- provider: script
+  skip_cleanup: true
+  script: sh deploy/test4.sh
+  on: *1
+
 
 after_deploy:
 - echo 'end deploy'
