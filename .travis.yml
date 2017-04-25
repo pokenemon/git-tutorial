@@ -28,7 +28,7 @@ deploy:
   script: sh deploy/test1.sh
   on: &1
 #   branch: $TRAVIS_BRANCH
-   branch: $TEST_DEPLOY_BRANCH
+   branch: $DEV_DEPLOY_BRANCH
 - provider: script
   skip_cleanup: true
   script: sh deploy/test2.sh
@@ -37,7 +37,7 @@ deploy:
   skip_cleanup: true
   script: sh deploy/test3.sh
   on: &1
-   branch: $DEV_DEPLOY_BRANCH
+   branch: $TEST_DEPLOY_BRANCH
 - provider: script
   skip_cleanup: true
   script: sh deploy/test4.sh
