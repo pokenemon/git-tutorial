@@ -31,7 +31,7 @@ deploy:
    branch: $DEV_DEPLOY_BRANCH
 - provider: script
   skip_cleanup: true
-  script: sh deploy/test2.sh
+  script: sh deploy/deploy.sh
   on: *1
 - provider: script
   skip_cleanup: true
