@@ -1,3 +1,8 @@
 #!/bin/bash
 
-touch /home/ec2-user/hoge.txt
+if [ $S3_ENV = "dev"] ; then
+  echo "OK"
+else
+  echo "Env no set.
+  exit 1
+fi
