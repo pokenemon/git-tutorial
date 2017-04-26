@@ -30,6 +30,7 @@
         #  }
         #],
         "KeyName":"test-key1",
+        "IamInstanceProfile" : "codedeploy-ec2",
         "InstanceType":"t2.micro",
         "NetworkInterfaces" : [ {
            "DeviceIndex" : "0",
