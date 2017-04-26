@@ -23,6 +23,7 @@ fi
 
 echo "wait until create-stack"
 echo "wait until create-stack"
+echo "wait until create-stack"
 
 sleep 300;
 
