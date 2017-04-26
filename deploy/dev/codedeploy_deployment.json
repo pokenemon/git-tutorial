@@ -9,8 +9,7 @@
      "bundleType": "zip"
    }
    },
- #"deploymentConfigName": "CodeDeployDefault.OneAtATime",
- "deploymentConfigName": "CodeDeployDefault.AllAtOnce",
+ "deploymentConfigName": "CodeDeployDefault.OneAtATime",
  "ignoreApplicationStopFailures": false,
  "autoRollbackConfiguration": {
    "events": [
