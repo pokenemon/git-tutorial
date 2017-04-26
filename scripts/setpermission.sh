@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $S3_ENV = "dev"] ; then
+if [ $riff_env = "dev"] ; then
   echo "OK"
 else
   echo "Env no set.
