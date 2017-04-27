@@ -21,6 +21,7 @@ after_success:
 - mkdir -p /var/tmp/release
 - tar -zcf /var/tmp/release/kawabata.tar.gz --exclude ".git" ./;
 - source deploy/set_branch.sh
+- echo "test"
 
 deploy:
 - provider: script
