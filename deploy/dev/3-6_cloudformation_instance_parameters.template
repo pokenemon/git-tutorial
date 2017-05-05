@@ -23,9 +23,8 @@
           {
             "DeviceName":"/dev/xvda",
             "Ebs":{
-              "SnapshotId":"snap-025e7c85",
                "VolumeSize":20,
-                "VolumeType":"standard"
+                "VolumeType":"gp2"
             }
           }
         ],
