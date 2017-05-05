@@ -23,7 +23,7 @@
           {
             "DeviceName":"/dev/xvda",
             "Ebs":{
-               "VolumeSize":20,
+               "VolumeSize":100,
                 "VolumeType":"gp2"
             }
           }
