@@ -15,7 +15,7 @@ echo "## create new ec2 instance"
 clf_stack_name="deploy-test-`date +%s`"
 template_dir=$(cd $(dirname $0) $$ pwd)
 
-aws cloudformation create-stack --stack-name "$clf_stack_name" --template-body file://deploy/"$riff_env"/"$clf_template_name"
+aws cloudformation create-stack --stack-name "$clf_stack_name" --template-body file://deploy/"$riff_env"/"$clf_template_name" --role-arn admin-role
 
 if [ $? != 0 ]; then
  exit 1
