@@ -47,6 +47,7 @@ deploy:
 
 after_deploy:
 - echo 'end deploy'
+- echo 'end deploy'
 
 
 
