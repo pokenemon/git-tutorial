@@ -25,7 +25,7 @@ after_success:
 - echo "test"
 
 deploy:
-- provider: codedeploy
+  provider: codedeploy
   access_key_id: $DEV_AWS_ACCESS_KEY_ID
   secret_access_key: $DEV_AWS_SECRET_ACCESS_KEY
   bucket: plussign
@@ -33,11 +33,11 @@ deploy:
   application: codedeploy_test
   deployment_group: dev-deployment-group
   region: ap-northeast-1
-  on: *1
+  on:
     branch: $DEV_DEPLOY_BRANCH
 
 after_deploy:
-- echo 'nd deploy'
+- echo 'end deploy'
 
 
 
