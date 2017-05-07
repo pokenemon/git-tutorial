@@ -4,7 +4,7 @@ files:
 - source: /
   destination: /tmp/
 hooks:
-AfterInstall:
+BeforeInstall:
 - location: scripts/echo.sh
   timeout: 300
   runas: root
