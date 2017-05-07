@@ -14,7 +14,7 @@ branches:
     - /^dev.*$/
     - /^dev-.*$/
     - topic-add-deployflow
-    - travis-code
+    - /^travis-.*$/
 
 after_success:
 - sudo pip install awscli
@@ -30,7 +30,7 @@ deploy:
   script: sh deploy/test1.sh
   on: &1
 #   branch: $TRAVIS_BRANCH
-   branch: $DEV_DEPLOY_BRANCH
+#   branch: $DEV_DEPLOY_BRANCH
 - provider: script
   skip_cleanup: true
   script: sh deploy/deploy.sh
@@ -53,6 +53,7 @@ deploy:
   deployment_group: dev-deployment-group
   region: ap-northeast-1
   on: *1
+   branch: $DEV_DEPLOY_BRANCH
 
 after_deploy:
 - echo 'end deploy'
